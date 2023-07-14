@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { recipeRouter } from "./Router/recipe.js";
 import { isAuthenticated } from "./Authentication/auth.js";
 import { userRouter } from "./Router/user.js";
+import cors from "cors";
 
 // Load environment variables
 dotenv.config();
@@ -15,6 +16,8 @@ const app = express();
 
 // Middleware
 app.use(express.json());
+app.use(cors());
+
 
 // Recipe routes (requires authentication)
 app.use("/recipe", isAuthenticated, recipeRouter);
