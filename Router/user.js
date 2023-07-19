@@ -39,10 +39,10 @@ router.post("/login", async (req, res) => {
 
     const token = generateJwtToken(user._id);
     res.status(200).json({
-      data: {
+       
         message: "Successfully logged in",
         token: token
-      }
+      
     });
   } catch (error) {
     console.log(error);
