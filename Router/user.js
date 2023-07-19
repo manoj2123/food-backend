@@ -25,6 +25,7 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
+    console.log(req.body)
     const user = await getUser(req.body.email);
 
     if (!user) {
