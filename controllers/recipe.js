@@ -10,7 +10,11 @@ export function getRecipeById(id) {
 }
 
 export function addRecipeData(data) {
-  return client.db("recipe").collection("recipe").insertOne(data);
+  const newRecipe = {
+  _id: new ObjectId(),
+  data: data,
+};
+  return client.db("recipe").collection("recipe").insertOne(newRecipe);
 }
 
 export function updateRecipeData(id, updateRecipeData) {

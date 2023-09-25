@@ -50,6 +50,7 @@ router.post("/add", async (req, res) => {
     }
 
     const result = await addRecipeData(newRecipe);
+    console.log("Recipe insertion result:", result);
     res.status(200).json({ result: result, message: "New recipe added successfully" });
   } catch (error) {
     console.log(error);
